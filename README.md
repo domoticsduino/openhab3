@@ -1,1 +1,1 @@
-# openhab3
+# OpenHAB3 Config and Support Tools
