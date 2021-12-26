@@ -1,6 +1,6 @@
 # OpenHAB3 Config and Support Tools
 
-## /backups/oh3-full-backup.sh
+## /backup-script/oh3-full-backup.sh
 
 Backup script for OpenHAB and Influxdb (running on docker).
 
