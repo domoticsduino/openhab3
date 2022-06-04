@@ -75,3 +75,7 @@ echo -e "Temporary directory deleted.";
 echo -e "";
 
 echo -e "Backup created \e[32msucessfully\e[0m! -> $BACKUPDIR$BACKUPNAME-$TIMESTAMP.tar.gz"
+echo -e ""
+
+echo -e "Move file on NAS using SCP"
+sudo scp $BACKUPDIR$BACKUPNAME-$TIMESTAMP.tar.gz sshd@192.168.1.6:/shares/Backup/Backup_OH3/$BACKUPNAME-last.tar.gz
