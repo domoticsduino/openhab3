@@ -1,0 +1,36 @@
+tabs:
+  - component: oh-tab
+    config:
+      icon: material:home
+      page: page:page_10d9791036
+      title: Home
+    slots:
+      default: []
+  - component: oh-tab
+    config:
+      icon: material:bedroom_baby
+      page: page:page_e6c51fc5c1
+      title: Primo Piano
+    slots:
+      default: []
+  - component: oh-tab
+    config:
+      icon: material:living
+      page: page:page_5e7371c60a
+      title: Piano Terra
+    slots:
+      default: []
+  - component: oh-tab
+    config:
+      icon: material:garage
+      page: page:page_57b69502fc
+      title: Seminterrato
+    slots:
+      default: []
+  - component: oh-tab
+    config:
+      icon: material:local_florist
+      page: page:page_3c96ca1fd4
+      title: Giardino
+    slots:
+      default: []

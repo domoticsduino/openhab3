@@ -1,0 +1,246 @@
+config:
+  activeIdx: 0
+  fixedType: canvas
+  gridEnable: true
+  label: Home
+  layoutType: fixed
+  order: "2"
+  screenHeight: 600
+  screenWidth: 1150
+  sidebar: true
+blocks: []
+masonry: null
+grid: []
+canvas:
+  - component: oh-canvas-layer
+    config:
+      layerName: XXXXX
+      preload: true
+    slots:
+      default:
+        - component: oh-canvas-item
+          config:
+            h: 180
+            noCanvasShadow: true
+            w: 560
+            x: 20
+            y: 240
+          slots:
+            default:
+              - component: oh-label-card
+                config:
+                  action: analyzer
+                  actionAnalyzerCoordSystem: time
+                  actionAnalyzerItems:
+                    - itEnergiaTempoReale
+                  fontSize: 96px
+                  icon: "=(items.itEnergiaTempoReale.state < 0) ? 'iconify:ic:outline-solar-power'
+                    : 'iconify:ic:baseline-power'"
+                  iconColor: "=(items.itEnergiaTempoReale.state < 0) ? 'yellow' : 'cyan'"
+                  iconSize: 96
+                  item: itEnergiaTempoReale
+                  noShadow: true
+                  outline: true
+                  trendItem: itEnergiaTempoReale
+        - component: oh-canvas-item
+          config:
+            h: 220
+            noCanvasShadow: true
+            w: 560
+            x: 20
+            y: 0
+          slots:
+            default:
+              - component: oh-clock-card
+                config:
+                  dateFontSize: 36px
+                  dateFormat: ddd DD/MM/YYYY
+                  datePos: above
+                  noShadow: true
+                  outline: true
+                  showDate: true
+                  timeFontSize: 110px
+                  timeFormat: HH:mm
+        - component: oh-canvas-item
+          config:
+            h: 180
+            noCanvasShadow: true
+            w: 560
+            x: 580
+            y: 240
+          slots:
+            default:
+              - component: oh-label-card
+                config:
+                  action: analyzer
+                  actionAnalyzerCoordSystem: time
+                  actionAnalyzerItems:
+                    - ptProduzioneFotovoltaico
+                  fontSize: 96px
+                  icon: iconify:openmoji:solar-energy
+                  iconSize: 150
+                  item: ptProduzioneFotovoltaico
+                  noShadow: true
+                  outline: true
+                  trendItem: ptProduzioneFotovoltaico
+        - component: oh-canvas-item
+          config:
+            h: 120
+            noCanvasShadow: true
+            w: 280
+            x: 580
+            y: 20
+          slots:
+            default:
+              - component: oh-label-card
+                config:
+                  action: analyzer
+                  actionAnalyzerCoordSystem: time
+                  actionAnalyzerItems:
+                    - ptSystemInfo_Memory_UsedPercent
+                  actionGroupPopupItem: grNetworkCheckError
+                  fontSize: 24px
+                  item: ptSystemInfo_Memory_UsedPercent
+                  noShadow: true
+                  outline: true
+                  title: MEMORIA OCCUPATA
+                  vertical: false
+        - component: oh-canvas-item
+          config:
+            h: 220
+            noCanvasShadow: true
+            w: 280
+            x: 860
+            y: 20
+          slots:
+            default:
+              - component: oh-label-card
+                config:
+                  action: navigate
+                  actionAnalyzerCoordSystem: time
+                  actionAnalyzerItems:
+                    - itEnergiaTempoReale
+                  actionGroupPopupItem: grAllarmi
+                  actionPage: page:page_a83489f1e3
+                  fontSize: 76px
+                  icon: "= (items.grAllarmi.state === 'ON') ?
+                    'iconify:akar-icons:triangle-alert-fill' :
+                    'iconify:ant-design:check-circle-filled'"
+                  iconColor: "= (items.grAllarmi.state === 'OFF') ? 'green' : 'red'"
+                  iconSize: 76
+                  item: grAllarmi
+                  label: "= (items.grAllarmi.state === 'ON') ? 'ERR' : 'OK'"
+                  noShadow: true
+                  outline: true
+                  title: ALLARMI
+        - component: oh-canvas-item
+          config:
+            h: 160
+            noCanvasShadow: true
+            w: 360
+            x: 20
+            y: 420
+          slots:
+            default:
+              - component: oh-label-card
+                config:
+                  action: group
+                  actionGroupPopupItem: grTemperature
+                  fontSize: 40px
+                  icon: iconify:carbon:temperature-celsius
+                  iconSize: 76
+                  item: grTemperatureInterno
+                  label: = 'in ' + items.grTemperatureInterno.state + " / out " +
+                    items.grTemperatureEX.state
+                  noShadow: true
+                  outline: true
+                  vertical: true
+        - component: oh-canvas-item
+          config:
+            h: 160
+            noCanvasShadow: true
+            w: 200
+            x: 380
+            y: 420
+          slots:
+            default:
+              - component: oh-label-card
+                config:
+                  action: group
+                  actionGroupPopupItem: grLuciManuali
+                  fontSize: 64px
+                  icon: iconify:raphael:lamp-alt
+                  iconColor: "=(items.grLuciManuali.state == 'ON') ? 'yellow' : 'white'"
+                  iconSize: 92
+                  item: grLuciManuali
+                  noShadow: true
+                  outline: true
+                  title: MANUALI
+                  vertical: false
+        - component: oh-canvas-item
+          config:
+            h: 160
+            noCanvasShadow: true
+            w: 200
+            x: 580
+            y: 420
+          slots:
+            default:
+              - component: oh-label-card
+                config:
+                  action: group
+                  actionGroupPopupItem: grLuciAutomatiche
+                  fontSize: 64px
+                  icon: iconify:raphael:lamp-alt
+                  iconColor: "=(items.grLuciAutomatiche.state == 'ON') ? 'yellow' : 'white'"
+                  iconSize: 92
+                  item: grLuciAutomatiche
+                  noShadow: true
+                  outline: true
+                  title: AUTOMATICHE
+                  vertical: false
+        - component: oh-canvas-item
+          config:
+            h: 160
+            noCanvasShadow: true
+            w: 360
+            x: 780
+            y: 420
+          slots:
+            default:
+              - component: oh-label-card
+                config:
+                  action: analyzer
+                  actionAnalyzerCoordSystem: time
+                  actionAnalyzerItems:
+                    - ptPTCucinaRilevamentoGas
+                  fontSize: 40px
+                  icon: iconify:mdi:gas-burner
+                  iconColor: "=(items.ptPTCucinaRilevamentoGas.state > 100) ? 'red' : 'green'"
+                  iconSize: 76
+                  item: ptPTCucinaRilevamentoGas
+                  noShadow: true
+                  outline: true
+                  trendItem: ptPTCucinaRilevamentoGas
+                  vertical: true
+        - component: oh-canvas-item
+          config:
+            h: 100
+            noCanvasShadow: true
+            w: 280
+            x: 580
+            y: 140
+          slots:
+            default:
+              - component: oh-label-card
+                config:
+                  action: analyzer
+                  actionAnalyzerCoordSystem: time
+                  actionAnalyzerItems:
+                    - ptSystemInfo_Storage_UsedPercent
+                  fontSize: 24px
+                  item: ptSystemInfo_Storage_UsedPercent
+                  noShadow: true
+                  outline: true
+                  title: DISCO OCCUPATO
+                  vertical: false
